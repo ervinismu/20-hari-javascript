@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- HEADER -->
+<%- include('partials/header') %>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <%- include('partials/navigation') %>
+
+  <h1>Profile Page</h1>
+  <img src="assets/images/rose.jpeg" alt="">
+
+  <p>Welcome back <%= data.name %>, Yeay!</p>
+  <p>
+    I'am working on 
+    <% jobs.forEach((item) => { %>
+      | <%= item %>
+    <% }) %>
+  </p>
+
+  <!-- FOOTER -->
+  <%- include('partials/footer') %>
+
+</body>
+</html>
