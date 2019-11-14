@@ -1,17 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// controller
+var article_controller = require('../controllers/articlesController.js');
+var application_controller = require('../controllers/applicationController.js');
 
-router.get('/about', function(req, res, next) {
-  res.render('about');
-});
+// routes
+router.get('/', application_controller.home);
 
-router.get('/contact', function(req, res, next) {
-  res.render('contact');
-});
+router.get('/about', application_controller.about);
+
+router.get('/contact', application_controller.contact);
+
+router.get('/articles', article_controller.article_list);
 
 module.exports = router;
