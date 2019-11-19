@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Company Website</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <!-- NAVIGATION -->
+    <%- include('../partials/navigation') %>
+
+    <h1>Our Clients</h1><br>
+    <ol>
+      <% data.forEach(function(val){ %>
+        <li>
+          Nama Client : <%= val.name %><br>
+          Total Projects : <%= val.total_project %><br>
+          Alamat Client : <%= val.address %><br>
+        </li><br>
+      <% }); %>
+    </ol>
+
+  </body>
+</html>

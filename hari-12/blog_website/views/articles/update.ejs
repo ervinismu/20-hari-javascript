@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- HEADER -->
+  <%- include('../partials/header') %>
+
+  <body>
+
+    <div class="container">
+
+    <!-- NAVIGATION -->
+    <%- include('../partials/navigation') %>
+
+    <h2>Form Update Article</h2>
+
+    <form action="/articles/create_article" method="post">
+
+      <div class="form-group">
+        <label for="inputTitle">Title</label>
+        <input type="text" name="title" class="form-control" id="inputTitle" placeholder="Your title" value="<%= article.title %>">
+      </div>
+
+      <div class="form-group">
+        <label for="inputAuthor">Author</label>
+        <input type="text" name="author" class="form-control" id="inputAuthor" placeholder="Your author" value="<%= article.author %>">
+      </div>
+
+      <div class="form-group">
+        <label for="inputDescription">Description</label>
+        <textarea name="description" id="" cols="30" rows="10" id="inputDescription" class="form-control" placeholder="<%= article.description %>"></textarea>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- FOOTER -->
+    <%- include('../partials/footer') %>
+    </div>
+  
+  </body>
+</html>

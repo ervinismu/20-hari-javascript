@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- HEADER -->
+  <%- include('../partials/header') %>
+
+  <body>
+    <div class="container">
+
+    <!-- NAVIGATION -->
+    <%- include('../partials/navigation') %>
+
+    <h2>Detail Article</h2>
+    <div>
+      <ul>
+        <li>
+          Title: <%= data.title %>
+        </li><br>
+        <li>
+          Id: <%= data._id %>
+        </li><br>
+        <li>
+          Author: <%= data.author %>
+        </li><br>
+        <li>
+          Description: <%= data.description %>
+        </li>
+      </ul>
+    </div>
+
+    <!-- FOOTER -->
+    <%- include('../partials/footer') %>
+
+    </div>
+  </body>
+</html>

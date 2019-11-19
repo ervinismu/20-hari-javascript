@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- HEADER -->
+  <%- include('../partials/header') %>
+
+  <body>
+    <div class="container">
+
+    <!-- NAVIGATION -->
+    <%- include('../partials/navigation') %>
+
+    <% if (message) { %>
+      <div class="alert alert-primary" role="alert">
+          <%= message %>
+      </div>
+    <% }; %>
+
+    <h2>Article List</h2>
+    <a href="articles/create">Create Article</a>
+    <br><br>
+    <br><br>
+
+    <ol>
+      <% articles.forEach(function(item) { %>
+        <li>
+
+          Id: <%= item._id %><br>
+          Title: <%= item.title %><br>
+          Author: <%= item.author %><br>
+
+          <a href='/articles/detail/<%= item._id %>'>Show</a>
+
+          <a href='/articles/delete/<%= item._id %>'>Delete</a>&nbsp;&nbsp;
+
+          <a href='/article/update'>Update</a>&nbsp;&nbsp;
+
+          <br><br>
+        </li>
+      <% }) %>
+    </ol>
+
+    <!-- FOOTER -->
+    <%- include('../partials/footer') %>
+
+    </div>
+  </body>
+</html>

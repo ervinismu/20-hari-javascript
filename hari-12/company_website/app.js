@@ -7,7 +7,7 @@ var mongoose = require('mongoose'); // require dependencies mongoose
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var articlesRouter = require('./routes/articles');
+var clientRouter = require('./routes/clients');
 
 var app = express();
 
@@ -23,19 +23,6 @@ db.once('open', function() {
   console.log('Success connect to database! Yeay!')
 });
 
-// Mongoose example
-// set data into model
-// const kitty = new Cat({ name: 'Budi', age: 4 });
-// call method
-// kitty.hello()
-// kitty.save(function(err, kitty){
-//   if (err){
-//     console.log(err.message);
-//   } else {
-//     kitty.hello();
-//   }
-// });
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -46,9 +33,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// router
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/articles', articlesRouter);
+app.use('/clients', clientRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
