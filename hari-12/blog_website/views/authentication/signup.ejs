@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- HEADER -->
+  <%- include('../partials/header') %>
+
+  <body>
+
+    <div class="container">
+
+    <!-- NAVIGATION -->
+    <%- include('../partials/navigation') %>
+
+    <h2>Signup</h2>
+
+    <form action="/auth/signup" method="post">
+
+      <div class="form-group">
+        <label for="inputUsername">Username</label>
+        <input type="text" name="username" class="form-control" id="inputUsername" placeholder="Your username">
+      </div>
+
+      <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Your password">
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <!-- FOOTER -->
+    <%- include('../partials/footer') %>
+    </div>
+  
+  </body>
+</html>
