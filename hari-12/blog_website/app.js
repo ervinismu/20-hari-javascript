@@ -1,16 +1,17 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 const bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var indexRouter = require('./routes/index');
-var articlesRouter = require('./routes/articles');
+const indexRouter = require('./routes/index');
+const articlesRouter = require('./routes/articles');
+const apiArticleRouter = require('./routes/api/articles');
 
 // SET CONNECTION MONGODB
-let mongo_db_url = "mongodb+srv://user-db:123456qwerty@company-website-db-m7end.mongodb.net/test?retryWrites=true&w=majority"
+const mongo_db_url = "mongodb+srv://user-db:123456qwerty@company-website-db-m7end.mongodb.net/test?retryWrites=true&w=majority"
 mongoose.connect(mongo_db_url, { 
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -41,6 +42,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 // routes
 app.use('/', indexRouter);
 app.use('/articles', articlesRouter);
+app.use('/api/articles', apiArticleRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

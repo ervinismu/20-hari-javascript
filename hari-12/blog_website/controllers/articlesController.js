@@ -44,7 +44,7 @@ exports.create = function(req, res, next) {
 };
 
 exports.create_article = function(req, res, next) {
-  console.log(req.body)
+  console.log(req.body) // yang dikirim dari user
   let article = new Article(req.body)
   article.save(function(err, results){
     if (err) {
